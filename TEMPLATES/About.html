@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon"  href="{% static 'ba.ico' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'About.css' %}">
+    <title>Profile Card</title>
+</head>
+
+<body>
+
+    <div class="modal">
+
+        <img src={% static "ba.ico" %}alt="">
+
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <div class="header">
+
+                <div class="main">
+                    <div class="image">
+                        <div class="hover">
+                            <i class="fas fa-camera fa-2x"></i>
+                        </div>
+                    </div>
+                    <h3 class="name">yahya</h3>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="left">
+                    <div class="about-container">
+                        <h3 class="title">About me</h3>
+                        <p class="text">Back-end developer and Medical Device Engineer</p>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:2px">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <circle cx="12" cy="11" r="3"></circle>
+                        <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"></path>
+                        </svg>
+                        <span>Iraq,Babylon</span>
+                    </div>
+                        <div class="icons-container">
+                            <a href="https://www.facebook.com/profile.php?id=100015200285390" target="_blank" class="icon">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com/04y03/" target="_blank" class="icon">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://github.com/y7yaaaaa123" target="_blank" class="icon">
+                                <i class="fab fa-git"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="app.js"></script>
+</body>
+
+</html>

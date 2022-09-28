@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<link rel="icon"  href="{% static 'icon.png' %}">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>y7yUpload</title>
+
+	<link rel="stylesheet" href="{% static 'button.css' %}">
+	
+
+</head>
+<body>
+	
+	<header>
+		<h1>welcome to y7yaaaaa123 upload</h1>
+		<form method="get" action="/" id="new-task-form">
+			<input
+				type="text" 
+				name="search" 
+				id="search" 
+				placeholder="search" />
+			</form>
+		<div >
+			<button class="bu"><a href="/About">About me</a></button>	
+		</div>
+
+	</div>
+		<div id="data"></div>		
+				<div class="center">
+					<input type="checkbox" id="show">
+					   <label for="show" class="button ">Uplode</label>
+					<div class="container">
+					   <label for="show" class="close-btn fas fa-times" title="close"></label>
+					   <div class="text">
+						  Uplode
+					   </div>
+					   <form  method="POST" enctype="multipart/form-data">
+						 {% csrf_token %}
+						  <div class="data">
+							<h2>File</h2>
+							<label>{{form.a}}</label>
+							 
+						  </div>
+						  <div class="data">
+							<h2>NameFile
+							 <label>{{form.t}}</label>
+							 
+						  </div>
+						  <div class="forgot-pass">
+							 
+						  </div>
+						  <div class="btn">
+							 <div class="inner"></div>
+							 <button type="submit">Aplode File</button>
+						  </div>
+						  <div class="signup-link">
+							 
+						  </div>
+					   </form>
+					</div>
+				  </div>
+			
+		
+		
+	</header>
+	<main>
+		
+		<section class="task-list">
+			
+
+			<div id="tasks">
+		{% for post in file %}
+		
+				 <div class="task">
+					<div class="content">
+						<input 
+							type="text" 
+							class="text" 
+							value="{{ post.t }}"
+							readonly>
+					</div>
+					<div class="actions">
+						
+						<a class="a">
+							<a href="{{ post.a.url }}"download="{{ post.a.url }}">Download</a>
+						</a>
+					</div>
+				</div> 
+
+		{% endfor %}
+			</div>
+		<section>
+			
+		</section>
+	
+	</main>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	 <script>
+		const data = '{{qs_json}}'
+	
+		const rdata = JSON.parse(data.replace(/&quot;/g, '"'))
+
+		const input = document.getElementById('search')
+	
+		let filteredArr = []
+		var box = document.getElementById("tasks");
+	
+		input.addEventListener('keyup', (e)=>{
+			box.innerHTML = ""
+			filteredArr = rdata.filter(FilesAdmin=> FilesAdmin['t'].includes(e.target.value))
+			if (filteredArr.length > 0){
+				filteredArr.map(FilesAdmin=>{
+					var obs = '<div class="task"><div class="content"><input type="text" class="text" value="'+FilesAdmin['t']+'"readonly></div><div class="actions"><a class="a"><a href="'+FilesAdmin['a']+'"download="'+FilesAdmin['a']+'">Download</a></a></div></div>';
+					box.innerHTML += obs;//`${FilesAdmin['t']}`
+				})
+			} else {
+				box.innerHTML = "<b>No results found...</b>"
+			}
+		})
+	
+	</script> 
+</body>
+</html>
