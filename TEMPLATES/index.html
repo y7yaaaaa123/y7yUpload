@@ -1,34 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
 
-    <input id="search_here" class="form-control mb-3" placeholder="type here to search.." />
-    <div id="box">
-        {% for item in object_list %}
-            <b>{{a}}<b><br>
-        {% endfor %}
-    </div>
+<html lang="en">
+<head>
+	<link rel="icon"  href="{% static 'icon.png' %}">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>y7yUpload</title>
 
-<script>
-    const data = '{{qs_json}}'
-    console.log(data)
+	<link rel="stylesheet" href="{% static 'button.css' %}">
+	
 
-    const rdata = JSON.parse(data.replace(/&quot;/g, '"'))
-    console.log(rdata)
-
-    const input = document.getElementById('search_here')
-    console.log(input)
-
-    let filteredArr = []
-
-    input.addEventListener('keyup', (e)=>{
-        box.innerHTML = ""
-        filteredArr = rdata.filter(info=> info['name'].includes(e.target.value))
-        console.log(filteredArr)
-        if (filteredArr.length > 0){
-            filteredArr.map(info=>{
-                box.innerHTML += `<b>${info['name']}</b><br>`
-            })
-        } else {
-            box.innerHTML = "<b>No results found...</b>"
-        }
-    })
-
-</script>
+</head>
+<link href="{% static 'icon.png' %}">
+<body>

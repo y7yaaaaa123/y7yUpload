@@ -52,7 +52,7 @@ def my_view(request):
 #     return render(request,'home.html',context)
 
 def download(request, path):
-    file_path=os.path.join(settings.MEDIA_Root,path)
+    file_path=os.path.join(settings.MEDIA_ROOT,path)
     if os.path.exists(file_path):
         with open(file_path,'rb')as fh:
             response=HttpResponse(fh.read(),content_type='application/a')
