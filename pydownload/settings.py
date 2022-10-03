@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-kxb@@t0aazywmj^p4*&@kh&ujq$l$ay523yi1wf0d9o%2%l)6l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 ALLOWED_HOSTS = ['*']
-# DEBUG = True
+#DEBUG = True
 # ALLOWED_HOSTS = []
 
 
@@ -126,8 +126,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'G:\django')
 
 
-MEDIA_URL = '/static/test/'
-MEDIA_ROOT = BASE_DIR / 'static/test/'
+MEDIA_URL = '/test/'
+MEDIA_ROOT = BASE_DIR / '/test/'
 # STATICFILES_DIRS = [BASE_DIR, 'static/test1']
 
 # Default primary key field type
@@ -135,4 +135,4 @@ MEDIA_ROOT = BASE_DIR / 'static/test/'
 
 # DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-django_heroku.settings(locals(), staticfiles=False)
+django_heroku.settings(locals())
